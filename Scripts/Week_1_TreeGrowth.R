@@ -19,8 +19,9 @@ setwd("/Volumes/GoogleDrive/My Drive/Teaching/2021/Data_Visualization/R/DataVisE
 list.files()
 
 #list files in the folder "Data"
-(file_import <- list.files(path = "Data"))
-
+(file_import <- list.files(path = "Data", pattern = "*.csv"))
+#files <- lapply(listFiles, read_csv)
+#files_dataFrame <- do.call(rbind, files)
 ###
 ###
 ###
@@ -129,6 +130,7 @@ growth%>%
   geom_line(aes(group=Tree_Number, 
                 color = Growth_cs), 
             lwd = 0.5,
+            
             #color = 'lightblue',
             alpha = 0.3)+
   #viridis::scale_color_viridis() +
